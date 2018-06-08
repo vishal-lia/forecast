@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <title>Forecast</title>
+    </head>
+    <body>
+    
+        <div class="forecast-header clearfix">
+            <img src="images/sun.png" class="logo"><span class="title-text">FORECAST</span>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" class="location" placeholder="Browse for your location">
+            <button class="search-btn">
+                <ion-icon name="search"></ion-icon>
+            </button>
+        </div>
+
+        <div class="content clearfix">
+            <div class="left-panel clearfix">
+                <div class="city-location">
+                    
+                </div>
+                <div class="date-time">
+                    
+                </div>
+
+                <div class="weather-details">
+                    <div class="temperature degree"></div>
+                    <div class="summary"></div>
+                    <div class="other-details">
+                        <div id="apparent-temp"></div>
+                        <div id="low"></div>
+                        <div id="high"></div>
+                        <div id="uvindex"></div>                  
+                    </div>
+                </div>
+                
+                <div class="weather-images">
+
+                </div>
+            </div>
+            
+            <div class="middle-panel">
+                <h5>RIGHT NOW</h5>
+                <div class="detail">
+                    <strong>Wind</strong><br>
+                    <div id="wind"></div>
+                </div>
+                <hr>
+                <div class="detail">
+                    <strong>Humidity</strong><br>
+                    <div id="humidity"></div>
+                </div>
+                <hr>
+                <div class="detail">
+                    <strong>Dew Point</strong><br>
+                    <div id="dewpoint"></div>
+                </div>
+                <hr>
+                <div class="detail">
+                    <strong>Pressure</strong><br>
+                    <div id="pressure"></div>
+                </div>
+                <hr>
+                <div class="detail">
+                    <strong>Visibility</strong><br>
+                    <div id="visibility"></div>
+                </div>
+            </div>
+
+            <div class="right-panel" id="map-holder">
+                
+            </div>
+        </div>
+
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCfeg7V_b7n46BkgKO6dXscBAujif1mrbw"></script>
+        <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

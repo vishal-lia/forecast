@@ -1,0 +1,178 @@
+/**************************************
+**** GENERAL
+**************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/**************************************
+**** HEADER
+**************************************/
+
+.forecast-header {
+    font-size: 180%;
+    padding: 12px 0 12px 38%;
+    background-color: #ecf0f1;
+}
+
+.logo {   
+    margin: 5px 10px 0 0;
+    width: 45px;
+    float: left;
+}
+
+.title-text {
+    float: left;
+    font-weight: 400;
+}
+
+/**************************************
+**** SEARCH BAR
+**************************************/
+
+.search-bar {
+    padding: 14px;
+    background-color: #dcdde1;
+    border-top: 1px solid #bebebe;
+    border-bottom: 1px solid #bebebe;    
+    text-align: center;
+}
+
+.location {
+    border: 1px solid #bebebe;
+    width: 500px;
+    background-color: #fff;
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    margin-right: 10px;
+    padding: 14px 18px;
+    border-radius: 8px;
+}
+.location:focus { 
+    outline: none; 
+    border: 1px solid #e7903f;    
+}
+
+.search-btn {
+    border: 0;
+    background: none;
+    font-size: 30px;
+    color: #555;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.search-btn:active { transform: translateY(2px); }
+.search-btn:focus { outline: none; }
+
+/**************************************
+**** CONTENT
+**************************************/
+
+.content {
+    background-color: #ecf0f1;
+    padding: 40px 20px 30px 35px;
+}
+
+.left-panel,
+.middle-panel,
+.right-panel {
+    background-color: #fff;    
+    height: 450px;
+    font-family: inherit;
+    color: inherit;
+    border: 1px solid #bebebe;
+    margin-right: 10px;
+    padding: 20px;
+    float: left;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,.2);
+}
+
+.left-panel {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/sky.jpg") ;
+    width: 38%;
+    color: #fff;
+}
+.middle-panel { width: 12%; }
+.right-panel { width: 47%; }
+
+/**************************************
+**** LEFT PANEL
+**************************************/
+
+.city-location {
+    text-align: center;
+    font-size: 90%;
+    font-weight: 400;
+}
+
+.date-time {
+    text-align: center;
+    font-size: 100%;
+    opacity: 0.6;
+}
+
+.weather-details {
+    float: left;
+    margin-top: 40px;
+}
+
+.temperature {
+    font-size: 180%;
+    font-weight: 800 !important;
+    margin-bottom: 15px;
+}
+
+.summary {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.other-details { 
+    font-size: 90%; 
+    line-height: 130%;
+    font-weight: 400; 
+}
+
+.degree { font-weight: 600; }
+
+.weather-images {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    margin-top: 40px;
+    padding: 6px;
+    float: right;
+    display: none;
+    border-radius: 4px;
+}
+
+.weather-icon { width: 100px; }
+
+.detail {
+    font-size: 80%;
+    margin: 15px 0;
+}
+
+#wind,
+#humidity,
+#dewpoint,
+#pressure,
+#visibility { font-weight: 400; }
