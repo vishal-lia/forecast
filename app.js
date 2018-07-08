@@ -20,6 +20,8 @@ app.post('/weather', function(req, res) {
     
     let address = null;
     let lat = 0, lng = 0;
+    let units = req.body.units;
+
     if(req.body.address) {
         address = req.body.address;
     } else if(req.body.lat && req.body.lng){
@@ -34,7 +36,7 @@ app.post('/weather', function(req, res) {
             weatherDetails.latlon.lat = geocode.latitude;
             weatherDetails.latlon.lng = geocode.longitude;
 
-            weather.getWeather(geocode.latitude, geocode.longitude, (errMsg, weather) => {
+            weather.getWeather(geocode.latitude, geocode.longitude, units, (errMsg, weather) => {
                 if(errMsg) {
                     console.log(errMsg);
                 } else {

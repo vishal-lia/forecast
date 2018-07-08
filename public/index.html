@@ -9,13 +9,17 @@
         <title>Forecast</title>
     </head>
     <body>
-    
+        
         <div class="forecast-header clearfix">
             <img src="images/sun.png" class="logo"><span class="title-text">FORECAST</span>
         </div>
 
         <div class="search-bar">
             <input type="text" class="location" placeholder="Browse for your location">
+            <select class="units">
+                <option value="si" selected>&deg;C, m/s</option>
+                <option value="us">&deg;F, mph</option>
+            </select>
             <button class="search-btn">
                 <ion-icon name="search"></ion-icon>
             </button>

@@ -1,6 +1,7 @@
 let controller = (function () {
     let DOMStrings = {
         inputLocation: '.location',
+        unitType: '.units',
         inputBtn: '.search-btn',
         cityLocation: '.city-location',
         dateTime: '.date-time',
@@ -40,7 +41,7 @@ let controller = (function () {
 
     function getWeather(address, mapLocation) {
         let url = null;
-        let data = null;
+        let data = {};
 
         if(address) {
             // Get weather details of this address from server
@@ -51,6 +52,8 @@ let controller = (function () {
             // Get weather details of current location from server
             data = mapLocation;
         }
+
+        data.units = document.querySelector(DOMStrings.unitType).value;
 
         url = '/weather';
         fetch(url, {
@@ -66,7 +69,7 @@ let controller = (function () {
             }
         }).then(function(weather) {
             // Display weather details
-            displayWeather(weather);
+            displayWeather(weather, data.units);
 
             // Display map location
             showMapLocation(weather.latlon);
@@ -75,10 +78,9 @@ let controller = (function () {
         });
     }
 
-    function displayWeather(weather) {
+    function displayWeather(weather, units) {
         document.querySelector(DOMStrings.cityLocation).textContent = weather.cityLocation;
         document.querySelector(DOMStrings.dateTime).textContent = 'as of ' + getDate();
-        document.querySelector(DOMStrings.temperature).innerHTML = weather.temperature + '&deg;C';
         document.querySelector(DOMStrings.summary).textContent = weather.summary;
         document.querySelector(DOMStrings.apparentTemp).innerHTML = 'feels like ' + '<span class="degree">' + weather.apparentTemp + '&deg;' + '</span>';
         document.querySelector(DOMStrings.low).innerHTML = 'Low: ' + '<span class="degree">' + weather.low + '&deg;' + '</span>';
@@ -86,11 +88,21 @@ let controller = (function () {
         document.querySelector(DOMStrings.uvindex).textContent = `UV Index ${weather.uvindex} of 10`;
         document.querySelector(DOMStrings.weatherImages).style.display = 'block';
         document.querySelector(DOMStrings.weatherImages).innerHTML = `<img src='images/icons/${weather.weatherIcon}.png' class='weather-icon'>`;
-        document.querySelector(DOMStrings.wind).textContent = weather.wind + ' m/s';
         document.querySelector(DOMStrings.humidity).textContent = weather.humidity + '%';
         document.querySelector(DOMStrings.dewpoint).innerHTML = weather.dewpoint + '&deg;';
-        document.querySelector(DOMStrings.pressure).textContent = weather.pressure + ' hPa';
-        document.querySelector(DOMStrings.visibility).textContent = weather.visibility + ' km';
+
+        if(units === 'us') {
+            document.querySelector(DOMStrings.temperature).innerHTML = weather.temperature + '&deg;F';
+            document.querySelector(DOMStrings.wind).textContent = weather.wind + ' mph';
+            document.querySelector(DOMStrings.pressure).textContent = weather.pressure + ' mb';
+            document.querySelector(DOMStrings.visibility).textContent = weather.visibility + ' mi';
+        } else {
+            document.querySelector(DOMStrings.temperature).innerHTML = weather.temperature + '&deg;C';
+            document.querySelector(DOMStrings.wind).textContent = weather.wind + ' m/s';
+            document.querySelector(DOMStrings.pressure).textContent = weather.pressure + ' hPa';
+            document.querySelector(DOMStrings.visibility).textContent = weather.visibility + ' km';
+        }
+
     }
 
     function showMapLocation(latlon) {

@@ -9,10 +9,12 @@
 }
 
 body {
+    background-color: #ecf0f1;
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
     font-size: 20px;
     font-weight: 300;
+    height: 100vh;
 }
 
 .clearfix::after {
@@ -28,7 +30,6 @@ body {
 .forecast-header {
     font-size: 180%;
     padding: 12px 0 12px 38%;
-    background-color: #ecf0f1;
 }
 
 .logo {   
@@ -54,9 +55,9 @@ body {
     text-align: center;
 }
 
-.location {
+.location,
+.units {
     border: 1px solid #bebebe;
-    width: 500px;
     background-color: #fff;
     color: inherit;
     font-family: inherit;
@@ -65,7 +66,12 @@ body {
     padding: 14px 18px;
     border-radius: 8px;
 }
-.location:focus { 
+
+.location { width: 500px; }
+.units { padding: 14px 8px;  }
+
+.location:focus,
+.units:focus { 
     outline: none; 
     border: 1px solid #e7903f;    
 }
@@ -88,10 +94,7 @@ body {
 **** CONTENT
 **************************************/
 
-.content {
-    background-color: #ecf0f1;
-    padding: 40px 20px 30px 35px;
-}
+.content { padding: 40px 20px 30px 35px; }
 
 .left-panel,
 .middle-panel,
