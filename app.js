@@ -46,7 +46,7 @@ app.post('/weather', function(req, res) {
                     weatherDetails.uvindex = weather.uvindex;
                     weatherDetails.weatherIcon = weather.weatherIcon;
                     weatherDetails.wind = Math.round(weather.wind);
-                    weatherDetails.humidity = weather.humidity*100;
+                    weatherDetails.humidity = Math.round(weather.humidity)*100;
                     weatherDetails.dewpoint = Math.round(weather.dewpoint);
                     weatherDetails.pressure = weather.pressure.toFixed(1);
                     weatherDetails.visibility = weather.visibility.toFixed(1);
