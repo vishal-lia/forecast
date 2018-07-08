@@ -68,7 +68,7 @@ body {
 }
 
 .location { width: 500px; }
-.units { padding: 14px 8px;  }
+.units { padding: 13px 8px;  }
 
 .location:focus,
 .units:focus { 
