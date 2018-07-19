@@ -3,9 +3,9 @@ const request = require('request');
 exports.geocodeAddress = (address, lat, lng, callback) => {
     let url = null;
     if(address) {
-        url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=AIzaSyCfeg7V_b7n46BkgKO6dXscBAujif1mrbw`;
+        url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${process.env.GEOCODE_API_KEY}`;
     } else if(lat && lng) {
-        url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyCfeg7V_b7n46BkgKO6dXscBAujif1mrbw`;        
+        url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.GEOCODE_API_KEY}`;        
     }
 
     request({

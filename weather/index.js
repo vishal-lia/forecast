@@ -2,7 +2,7 @@ const request = require('request');
 
 exports.getWeather = (latitude, longitude, units, callback) => {
     request({
-        url: `https://api.darksky.net/forecast/d819e888366357ca1dbb6e3531621fed/${latitude},${longitude}?units=${units}`,
+        url: `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${latitude},${longitude}?units=${units}`,
         json: true
     }, function(error, response, body) {
         if(error) throw error;
